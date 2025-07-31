@@ -1,0 +1,96 @@
+/* src/index.css */
+html, body, #root { /* Target html, body, and React's root div */
+  height: 100%;    /* Make them take full height of their parent */
+  margin: 0;       /* Remove default browser margin */
+  padding: 0;      /* Remove default browser padding */
+}
+
+body {
+  font-family: Arial, sans-serif;
+  /* Remove flex properties from body if present, as layout-container now handles flex */
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
+  /* min-height: 100vh; */ /* This is now handled by html, body, #root height: 100% + layout-container flex */
+  background-color: #f4f4f4; /* Keep a light background */
+}
+
+/* Ensure the layout-container can grow */
+.layout-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* This ensures it's at least the height of the viewport */
+  background-color: #f0f2f5; /* Light grey background */
+  width: 100%; /* Ensure it takes full width */
+}
+
+/* Ensure main content grows to push footer down */
+.app-main-content {
+  flex-grow: 1; /* This is key: it makes the main content expand to fill available vertical space */
+  padding: 30px;
+  background-color: #ffffff;
+  margin: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  /* Add min-height to app-main-content if you want it to have a minimum visual height even with little content */
+  min-height: calc(100vh - 200px); /* Adjust 200px based on header/footer height */
+}
+
+/* Ensure .login-container still works for the login page */
+.login-container {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  /* Add margin-top and margin-bottom to center it vertically if needed */
+  margin: 50px auto; /* Add auto to horizontally center */
+}
+
+/* Add some basic styles for the register-user-container */
+.register-user-container {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px;
+  margin: 20px auto;
+  text-align: center;
+}
+.register-user-container div {
+  margin-bottom: 15px;
+  text-align: left;
+}
+.register-user-container label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #555;
+}
+.register-user-container input[type="text"],
+.register-user-container input[type="password"],
+.register-user-container select {
+  width: calc(100% - 20px);
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+.register-user-container button {
+  background-color: #007bff;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  width: auto; /* Adjust to auto for multiple buttons */
+  transition: background-color 0.3s ease;
+}
+.register-user-container button:hover {
+  background-color: #0056b3;
+}

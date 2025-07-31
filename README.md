@@ -1,116 +1,70 @@
-# HRMS Application - Full Stack
+# Getting Started with Create React App
 
-## Project Overview
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-This project is a modern Human Resources Management System (HRMS) developed as a full-stack web application. It aims to provide an efficient platform for managing various HR-related tasks, including employee data, attendance records, and leave applications.
+## Available Scripts
 
-### Key Features
+In the project directory, you can run:
 
-* **Authentication & Authorization:** Secure user login with role-based access control (Employee, HR, Admin).
-* **User Management:**
-    * **Employee Registration:** HR users can register new employees (Employee & Manager roles).
-    * **Employee Profile:** Employees can view their own profiles.
-    * **Employee Listing:** HR can view and manage a list of all employees.
-    * **Employee Deletion:** HR can delete employee records along with all associated data (attendance, leaves).
-* **Attendance Management:**
-    * **Mark Attendance:** Employees can mark their daily attendance with geolocation recording.
-    * **Attendance History:** Employees can view their attendance history.
-* **Leave Management:**
-    * **Apply for Leave:** Employees can submit leave applications with start date, end date, return date, and reason.
-    * **Application Status:** Employees can view the status of their leave applications.
-    * **Manage Leaves (HR):** HR can view and manage (approve/decline) all pending leave applications.
-* **Dashboard:** Role-specific dashboards for employees and HR personnel.
+### `npm start`
 
-## Technologies Used
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-### Frontend (React.js)
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-* **React:** A JavaScript library for building user interfaces.
-* **Material-UI (MUI):** A popular React UI framework for beautiful and responsive design components.
-* **Axios:** Promise-based HTTP client for making API requests.
-* **React Router DOM:** For declarative routing in React applications.
-* **`date-fns` / `@mui/x-date-pickers`:** For robust date handling and date pickers.
-* **`navigator.geolocation` API:** For browser-based location services.
+### `npm test`
 
-### Backend (Node.js with Express.js)
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-* **Node.js:** JavaScript runtime environment.
-* **Express.js:** Fast, unopinionated, minimalist web framework for Node.js.
-* **MS SQL Server (via `mssql` package):** Relational database for data storage.
-* **`jsonwebtoken` (JWT):** For secure authentication tokens.
-* **`bcryptjs`:** For password hashing.
-* **`dotenv`:** For managing environment variables.
-* **Custom Middleware:** For authentication (`verifyToken`) and role-based authorization (`authorizeRole`).
+### `npm run build`
 
-## Setup and Installation
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-### Prerequisites
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-Before you begin, ensure you have the following installed:
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-* Node.js (LTS version recommended)
-* npm (comes with Node.js) or Yarn
-* Microsoft SQL Server (or access to an SQL Server instance)
-* SQL Server Management Studio (SSMS) or Azure Data Studio (recommended for database management)
+### `npm run eject`
 
-### 1. Backend Setup
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-1.  **Clone the repository:**
-    ```bash
-    git clone [https://github.com/YourUsername/your-repo-name.git](https://github.com/YourUsername/your-repo-name.git)
-    cd your-repo-name/backend # Or whatever your backend folder is named
-    ```
-2.  **Install dependencies:**
-    ```bash
-    npm install
-    # or
-    yarn install
-    ```
-3.  **Database Setup (SQL Server):**
-    * Create a new database (e.g., `HRMS_DB`).
-    * Run the SQL scripts (you'll need to provide these, see "Database Schema" section below) to create necessary tables (`Users`, `Employee_Profiles`, `Attendance`, `Leave_Applications`, etc.) and set up relationships (foreign keys).
-    * Ensure your `Users` table has `user_id`, `password`, `role` (e.g., 'Employee', 'HR', 'Admin').
-4.  **Configure Environment Variables:**
-    Create a `.env` file in your `backend` directory with the following variables:
-    ```env
-    DB_SERVER=your_sql_server_instance_name # e.g., localhost\SQLEXPRESS
-    DB_DATABASE=HRMS_DB
-    DB_USER=your_sql_user
-    DB_PASSWORD=your_sql_password
-    DB_PORT=1433 # Default SQL Server port
-    JWT_SECRET=your_super_secret_jwt_key
-    ```
-5.  **Run the backend server:**
-    ```bash
-    npm start
-    # or
-    yarn start
-    ```
-    The backend server should start on `http://localhost:5000`.
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-### 2. Frontend Setup
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-1.  **Navigate to the frontend directory:**
-    ```bash
-    cd ../frontend # Or whatever your frontend folder is named
-    ```
-2.  **Install dependencies:**
-    ```bash
-    npm install
-    # or
-    yarn install
-    ```
-3.  **Configure API Base URL:**
-    (If your frontend uses environment variables) Create a `.env` file in your `frontend` directory:
-    ```env
-    REACT_APP_API_BASE_URL=http://localhost:5000/api
-    ```
-    (Otherwise, ensure your `axios.defaults.baseURL` or individual Axios calls point to your backend.)
-4.  **Run the frontend development server:**
-    ```bash
-    npm start
-    # or
-    yarn start
-    ```
-    The frontend application should open in your browser at `http://localhost:3000`.
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
+
+### Code Splitting
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+
+### Analyzing the Bundle Size
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
